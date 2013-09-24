@@ -1,0 +1,27 @@
+picture_collection:
+    pattern:  /collection
+    defaults: { _controller: AppPictureBundle:Collection:index }
+
+picture_collection_create:
+    pattern:  /collection/create
+    defaults: { _controller: AppPictureBundle:Collection:create }
+
+picture_collection_new:
+    pattern:  /collection/new
+    defaults: { _controller: AppPictureBundle:Collection:new }
+
+picture_collection_show:
+    pattern:  /collection/{id}
+    defaults: { _controller: AppPictureBundle:Collection:show }
+
+picture_collection_edit:
+    pattern:  /collection/{id}/edit
+    defaults: { _controller: AppPictureBundle:Collection:edit }
+
+picture_collection_update:
+    pattern:  /collection/{id}
+    defaults: { _controller: AppPictureBundle:Collection:update }
+
+picture_collection_delete:
+    pattern:  /collection/{id}
+    defaults: { _controller: AppPictureBundle:Collection:delete }

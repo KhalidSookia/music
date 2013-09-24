@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: %locale% }
+    translator:      { fallback: %locale% }
     secret:          %secret%
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -64,3 +64,30 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+
+# fosuser bundle config
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: App\UserBundle\Entity\User
+    service:
+        mailer: fos_user.mailer.default
+    registration:
+        form:
+            type: app_user_registration
+        confirmation:
+            enabled: false
+            from_email:
+                address: khalidsookia@gmail.com
+                sender_name: Site de Music
+    resetting:
+        email:
+            from_email:
+                address: khalidsookia@gmail.com
+                sender_name: Reset password
+
+services:
+    twig.extension.intl:
+        class: Twig_Extensions_Extension_Intl
+        tags:
+            - { name: twig.extension }

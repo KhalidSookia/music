@@ -1,0 +1,17 @@
+App\PictureBundle\Entity\Collection:
+    type: entity
+    table: null
+    repositoryClass: App\PictureBundle\Entity\CollectionRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 255
+        createdAt:
+            type: datetime
+            column: created_at
+    lifecycleCallbacks: {  }
